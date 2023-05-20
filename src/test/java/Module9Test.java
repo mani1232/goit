@@ -25,7 +25,7 @@ public class Module9Test {
     }
 
     @Test
-    @DisplayName("Test MyHashMap methods")
+    @DisplayName("Test MyStack methods")
     void TestStack() {
         MyStack<String> stack = new MyStack<>();
         stack.push("Test1");
