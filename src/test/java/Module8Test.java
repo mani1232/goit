@@ -8,16 +8,17 @@ public class Module8Test {
     @Test
     @DisplayName("Validation shapes")
     void test1() {
+        ShapeUtils shapeUtils = new ShapeUtils();
         Shape shape = new Quad();
-        Assertions.assertEquals(Quad.class.getName().split("\\.")[3], ShapeUtils.getName(shape));
+        Assertions.assertEquals(Quad.class.getName().split("\\.")[3], shapeUtils.getName(shape));
         shape = new Circle();
-        Assertions.assertEquals(Circle.class.getName().split("\\.")[3], ShapeUtils.getName(shape));
+        Assertions.assertEquals(Circle.class.getName().split("\\.")[3], shapeUtils.getName(shape));
         shape = new Rectangle();
-        Assertions.assertEquals(Rectangle.class.getName().split("\\.")[3], ShapeUtils.getName(shape));
+        Assertions.assertEquals(Rectangle.class.getName().split("\\.")[3], shapeUtils.getName(shape));
         shape = new Trapeze();
-        Assertions.assertEquals(Trapeze.class.getName().split("\\.")[3], ShapeUtils.getName(shape));
+        Assertions.assertEquals(Trapeze.class.getName().split("\\.")[3], shapeUtils.getName(shape));
         shape = new Square();
-        Assertions.assertEquals(Square.class.getName().split("\\.")[3], ShapeUtils.getName(shape));
+        Assertions.assertEquals(Square.class.getName().split("\\.")[3], shapeUtils.getName(shape));
     }
 
 }
