@@ -10,6 +10,6 @@ import java.io.Serializable;
 @Getter
 @Setter
 public class User implements Serializable {
-    String name;
-    String age;
+    private String name;
+    private String age;
 }
