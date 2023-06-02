@@ -33,13 +33,18 @@ public class Main {
     }
 
     public static void module11() {
+        // hw 1
         List<Object> list = Utils.oddList(List.of("AName0", "AName1", "VName2", "YName3", "GName4", "HName5", "TName6", "BName7"), false);//.forEach(System.out::println);
+        // hw 2
         list.stream().filter(s -> s instanceof String).toList().stream().map(s -> s.toString().toUpperCase()).sorted(Comparator.reverseOrder()).forEach(System.out::println);
+        // hm 3
         System.out.println(Stream.of("1, 2, 0", "3, 4, 5").flatMap(s -> Arrays.stream(s.split(", ")))
                 .map(String::trim)
                 .sorted()
                 .collect(Collectors.joining(", ")));
+        // hw 4
         Utils.generateRandomStream(25214903917L, 11L, (long) Math.pow(2, 48)).limit(10).forEach(System.out::println);
+        // hw 5
         Utils.zip(Stream.of(1, 2, 3, 4, 5), Stream.of(6, 7, 8)).forEach(System.out::println);
     }
 
