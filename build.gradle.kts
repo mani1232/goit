@@ -14,6 +14,8 @@ dependencies {
 
     implementation("com.electronwill.night-config:json:3.6.6")
 
+    implementation("ch.qos.logback:logback-classic:1.4.7")
+
     compileOnly("org.projectlombok:lombok:1.18.28")
     annotationProcessor("org.projectlombok:lombok:1.18.28")
 
@@ -24,12 +26,10 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
-tasks.compileJava {
-    options.encoding = "UTF-8"
-}
-
-tasks.shadowJar {
-    archiveFileName.set("" + findProperty("project-name") + "-v" + version + ".jar")
+tasks {
+    withType<JavaCompile>().configureEach {
+        options.encoding = Charsets.UTF_8.name()
+    }
 }
 
 tasks.test {

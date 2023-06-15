@@ -1,5 +1,7 @@
 package ua.mani123;
 
+import ua.mani123.Module12.FizzBuzz;
+import ua.mani123.Module12.Task;
 import ua.mani123.module10.FileUtils;
 import ua.mani123.module11.Utils;
 import ua.mani123.module8.*;
@@ -14,7 +16,8 @@ public class Main {
     public static void main(String[] args) {
         //module10();
         //module8();
-        module11();
+        //module11();
+        module12();
     }
 
     public static void module8() {
@@ -46,6 +49,18 @@ public class Main {
         Utils.generateRandomStream(25214903917L, 11L, (long) Math.pow(2, 48)).limit(10).forEach(System.out::println);
         // hw 5
         Utils.zip(Stream.of(1, 2, 3, 4, 5), Stream.of(6, 7, 8)).forEach(System.out::println);
+    }
+
+    public static void module12() {
+        Task task = new Task();
+        task.runEverySecondTask();
+        task.runEveryFiveSecondsTask();
+        FizzBuzz fizzBuzz = new FizzBuzz(15);
+        try {
+            fizzBuzz.printResult();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
