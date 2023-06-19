@@ -1,7 +1,6 @@
 package ua.mani123;
 
 import mani123.ua.WebRequester;
-import mani123.ua.data.User;
 import ua.mani123.Module12.FizzBuzz;
 import ua.mani123.Module12.Task;
 import ua.mani123.module10.FileUtils;
@@ -9,10 +8,7 @@ import ua.mani123.module11.Utils;
 import ua.mani123.module8.*;
 
 import java.net.http.HttpResponse;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -69,16 +65,25 @@ public class Main {
     }
 
     public static void module13() {
-        HttpResponse<String> response;
+        //HttpResponse<String> response;
         //User user = new User();
         //user.setId(5);
         //user.setName("NewName");
         //response = new WebRequester("https://jsonplaceholder.typicode.com").putUserRequest(user, "users").sendRequest();
         //System.out.println(response.statusCode());
         //System.out.println(response.body());
-        response = new WebRequester("https://jsonplaceholder.typicode.com").deleteUserRequest("users", "1").sendRequest();
-        System.out.println(response.statusCode());
-        System.out.println(response.body());
+
+        // Lol 100 files with comments
+
+        //ArrayList<User> users = new ArrayList<>(new WebRequester("https://jsonplaceholder.typicode.com").getRequest("users", null, null).sendRequestAndReturnUserList());
+        //HashMap<File, ArrayList<Comment>> data = new HashMap<>();
+        //users.forEach(user -> {
+        //    new WebRequester("https://jsonplaceholder.typicode.com").getRequest("users/" + user.getId() + "/posts", null, null).sendRequestAndReturnPostList().forEach(post -> {
+        //        data.put(new File(String.format("user-%s-post-%s-comments.json", user.getId(), post.getId())), new ArrayList<>(new WebRequester("https://jsonplaceholder.typicode.com").getRequest("posts/" + post.getId() + "/comments", null, null).sendRequestAndReturnCommentList()));
+        //    });
+        //});
+        //WebRequester.Companion.saveToFiles(data);
+        System.out.println(new WebRequester("https://jsonplaceholder.typicode.com").getRequest("users/1/todos", null, null).sendRequestAndReturnTodoList().stream().filter(todo -> !todo.getCompleted()).collect(Collectors.toList()));
     }
 
 }

@@ -12,18 +12,7 @@ data class User(
     var phone: String,
     var website: String,
     var company: Company
-) {
-    constructor() : this(
-        11,
-        "not_set",
-        "not_set",
-        "not_set",
-        Address(),
-        "not_set",
-        "not_set",
-        Company()
-    )
-}
+)
 
 @Serializable
 data class Address(
@@ -32,29 +21,17 @@ data class Address(
     var city: String,
     var zipcode: String,
     var geo: Geo
-) {
-    constructor() : this(
-        "not_set", "not_set", "not_set", "not_set", Geo()
-    )
-}
+)
 
 @Serializable
 data class Geo(
     var lat: String,
     var lng: String
-) {
-    constructor(): this(
-        "not_set", "not_set"
-    )
-}
+)
 
 @Serializable
 data class Company(
     var name: String,
     var catchPhrase: String,
     var bs: String
-) {
-    constructor(): this(
-        "not_set", "not_set", "not_set"
-    )
-}
+)
