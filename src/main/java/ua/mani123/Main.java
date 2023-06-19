@@ -76,7 +76,7 @@ public class Main {
         //response = new WebRequester("https://jsonplaceholder.typicode.com").putUserRequest(user, "users").sendRequest();
         //System.out.println(response.statusCode());
         //System.out.println(response.body());
-        response = new WebRequester("https://jsonplaceholder.typicode.com").getUserRequest("users", null, null).sendRequest();
+        response = new WebRequester("https://jsonplaceholder.typicode.com").deleteUserRequest("users", "1").sendRequest();
         System.out.println(response.statusCode());
         System.out.println(response.body());
     }

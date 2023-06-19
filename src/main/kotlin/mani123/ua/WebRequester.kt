@@ -39,9 +39,9 @@ class WebRequester(
         return this
     }
 
-    fun deleteUserRequest(endLink: String): WebRequester {
+    fun deleteUserRequest(endLink: String, userId: String): WebRequester {
         request = HttpRequest.newBuilder()
-            .uri(URI.create("$link/$endLink"))
+            .uri(URI.create("$link/$endLink/$userId"))
             .header("Content-Type", "application/json")
             .DELETE()
             .build()
