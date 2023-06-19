@@ -1,14 +1,18 @@
 package ua.mani123;
 
+import mani123.ua.WebRequester;
+import mani123.ua.data.User;
 import ua.mani123.Module12.FizzBuzz;
 import ua.mani123.Module12.Task;
 import ua.mani123.module10.FileUtils;
 import ua.mani123.module11.Utils;
 import ua.mani123.module8.*;
 
+import java.net.http.HttpResponse;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -17,7 +21,8 @@ public class Main {
         //module10();
         //module8();
         //module11();
-        module12();
+        //module12();
+        module13();
     }
 
     public static void module8() {
@@ -61,6 +66,19 @@ public class Main {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void module13() {
+        HttpResponse<String> response;
+        //User user = new User();
+        //user.setId(5);
+        //user.setName("NewName");
+        //response = new WebRequester("https://jsonplaceholder.typicode.com").putUserRequest(user, "users").sendRequest();
+        //System.out.println(response.statusCode());
+        //System.out.println(response.body());
+        response = new WebRequester("https://jsonplaceholder.typicode.com").getUserRequest("users", null, null).sendRequest();
+        System.out.println(response.statusCode());
+        System.out.println(response.body());
     }
 
 }
